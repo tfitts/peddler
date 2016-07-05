@@ -204,6 +204,11 @@ module MWS
         run
       end
 
+      def get_prep_instructions_for_sku opts = {}
+        operation('GetPrepInstructionsForSKU').add(opts).structure!('SellerSKUList','member')
+        run
+      end
+
       # Gets the operational status of the API
       #
       # @see http://docs.developer.amazonservices.com/en_US/fba_inbound/MWS_GetServiceStatus.html
